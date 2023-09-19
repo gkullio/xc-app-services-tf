@@ -7,13 +7,13 @@
 variable "name" {
   type        = string
   description = "Application name"
-  default     = "titan"
+  default     = "g-kulland-demo"
 }
 
 variable "environment" {
   type        = string
   description = "Application environment"
-  default     = "dev"
+  default     = "demonstration"
 }
 
 variable "adminUserName" {
@@ -43,7 +43,7 @@ variable "sshPublicKeyPath" {
 variable "api_p12_file" {
   type        = string
   description = "REQUIRED:  This is the path to the Volterra API Key.  See https://volterra.io/docs/how-to/user-mgmt/credentials"
-  default     = "./api-creds.p12"
+  default     = "/mnt/c/Users/kulland/Downloads/f5-amer-ent.console.ves.volterra.io.api-creds.p12"
 }
 
 variable "api_cert" {
@@ -60,16 +60,16 @@ variable "api_key" {
 variable "tenant_name" {
   type        = string
   description = "REQUIRED:  This is your Volterra Tenant Name:  https://<tenant_name>.console.ves.volterra.io/api"
-  default     = "mr-customer"
+  default     = "f5-amer-ent"
 }
 // Required Variable
 variable "namespace" {
   type        = string
   description = "REQUIRED:  This is your Volterra App Namespace"
-  default     = "namespace"
+  default     = "g-kulland"
 }
 variable "delegated_dns_domain" {
-  default = "testdomain.com"
+  default = "amer-ent.f5demos.com"
 }
 // Required Variable
 variable "api_url" {
@@ -77,7 +77,9 @@ variable "api_url" {
   description = "REQUIRED:  This is your Volterra API url"
   default     = "https://playground.console.ves.volterra.io/api"
 }
-variable "fleet_label" { default = "fleet_label" }
+variable "fleet_label" { 
+  default = "fleet_label" 
+}
 
 variable "instance_type" {
   description = "XCS EC2 node instance type"
