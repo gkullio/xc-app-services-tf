@@ -9,7 +9,7 @@ resource "volterra_origin_pool" "origin" {
   origin_servers {
 
     public_name {
-      dns_name = "coleman.myedgedemo.com"
+      dns_name = "httpbin.org"
     }
 
     labels = {
@@ -67,7 +67,6 @@ resource "volterra_http_loadbalancer" "appProxy" {
   enable_api_discovery {
     enable_learn_from_redirect_traffic = true
   }
-
 
   api_rate_limit {
     no_ip_allowed_list = true
@@ -253,7 +252,7 @@ resource "volterra_http_loadbalancer" "appProxy" {
         weight   = 1
         priority = 1
       }
-      host_rewrite = "coleman.myedgedemo.com"
+      host_rewrite = "httpbin.org"
     }
   }
   routes {
